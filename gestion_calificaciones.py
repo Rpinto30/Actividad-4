@@ -16,14 +16,13 @@ while True:
     elif option == 2:
         print("\n"+"-"*20+"Mostrar lista de estudiantes"+"-"*20)
         if len(regist_students) > 0:
-            for i in regist_students:
-                print(f"{'Nombre del estudiante':<50}{'Nota'}")
-                print(f"{i:<50}{regist_students[i]}")
+            print(f"{'Nombre del estudiante':<50}{'Nota'}")
+            for i in regist_students: print(f"{i:<50}{regist_students[i]}")
         else:
             print("No se han encontrado estudiantes")
     elif option == 3:
-        pass
-    elif option == 4:
-        pass
-    else:
-        print("Entrada no valida")
+        sum = 0
+        for i in regist_students: sum += regist_students[i]
+        print(f"\nEl promedio general de los estudiantes es: {round(sum/len(regist_students), 2)}\n")
+    elif option == 4: break
+    else: print("Entrada no valida")

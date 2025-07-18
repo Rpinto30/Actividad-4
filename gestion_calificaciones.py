@@ -14,7 +14,13 @@ while True:
             #Sacado de: https://www.w3schools.com/python/ref_dictionary_setdefault.asp
         regist_students.setdefault(name, points)
     elif option == 2:
-        pass
+        print("\n"+"-"*20+"Mostrar lista de estudiantes"+"-"*20)
+        if len(regist_students) > 0:
+            for i in regist_students:
+                print(f"{'Nombre del estudiante':<50}{'Nota'}")
+                print(f"{i:<50}{regist_students[i]}")
+        else:
+            print("No se han encontrado estudiantes")
     elif option == 3:
         pass
     elif option == 4:

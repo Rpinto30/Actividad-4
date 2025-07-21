@@ -1,8 +1,9 @@
-dates = [] #[20,7,2025]
+#dates = [] #[20,7,2025]
 
 dates = [[21,7,2024],[30,8,2025]]
 #dates = [[19,7,2025],[30,6,2025]]
 
+#Detección de días segun el mes
 def is_leap(year_leap): return (year_leap % 4 == 0 and year_leap % 100 != 0) or (year_leap % 400 == 0)
 def month_true(month_day, year_day):
     if month_day == 2:  #FEBRERO CONTANDO SI ES BICIESTO
@@ -12,7 +13,9 @@ def month_true(month_day, year_day):
     elif month_day in [1, 3, 5, 7, 8, 10, 12]: return 31 #MESES CON 31 DÍAS
     else: return 0 #entrada no valida
 
+def days_on_month(date): return month_true(date[1], date[2]) - date[0]
 
+#Solo imprimen mensajes
 def mayor_date(date_1, date_2): print(f"La fecha {date_1[0]}/{date_1[1]}/{date_1[2]} es mayor a la fecha {date_2[0]}/{date_2[1]}/{date_2[2]}")
 def equals_date(date_1, date_2, equal): print(f"La fecha {date_1[0]}/{date_1[1]}/{date_1[2]} esta en el mismo {equal} que {date_2[0]}/{date_2[1]}/{date_2[2]}")
 '''
@@ -50,4 +53,5 @@ if len(dates) > 0:
                 days_between += abs(dates[0][0] - dates[1][0])
                 equals_date(dates[0], dates[1], "mes y año")
 
+    print(days_on_month([20,7,2025]))
     print(f"\nLos días que han pasado entre ambas fechas son: {days_between}")

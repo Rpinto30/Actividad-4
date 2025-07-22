@@ -1,6 +1,6 @@
 students = {}
 
-for i in range(2):
+for i in range(5):
     print('\n'+"-"*20+f"Estudiante {i+1}"+"-"*20)
     list_notes = []
     name = input(f"Ingrese el nombre del estudiante {i+1}: ")
